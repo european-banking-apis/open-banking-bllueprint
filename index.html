@@ -220,7 +220,7 @@ window.onload = function() {
 
   // HSDS
   const open_banking_accounts = SwaggerUIBundle({
-    url: "http://developer.open.referral.adopta.agency/openapi/hsda-full.yaml",
+    url: "https://raw.githubusercontent.com/{{ site.github_org }}/{{ site.github_repo }}/master/_data/api-commons/accounts-openapi.yaml",
     dom_id: '#open-banking-accounts',
     presets: [
       SwaggerUIBundle.presets.apis,
@@ -235,7 +235,7 @@ window.onload = function() {
 
   // HSDS
   const open_banking_payments = SwaggerUIBundle({
-    url: "http://developer.open.referral.adopta.agency/openapi/hsda.yaml",
+    url: "https://raw.githubusercontent.com/{{ site.github_org }}/{{ site.github_repo }}/master/_data/api-commons/payments-openapi.yaml",
     dom_id: '#open-banking-payments',
     presets: [
       SwaggerUIBundle.presets.apis,
@@ -250,7 +250,7 @@ window.onload = function() {
 
   // HSDS Search
   const open_banking_atms = SwaggerUIBundle({
-    url: "https://raw.githubusercontent.com/{{ site.github_org}}/{{ site.github_repo}}/master/_data/api-commons/openapi-hsda-search.yaml",
+    url: "https://raw.githubusercontent.com/{{ site.github_org }}/{{ site.github_repo }}/master/_data/api-commons/atms-openapi.yaml",
     dom_id: '#open-banking-atms',
     presets: [
       SwaggerUIBundle.presets.apis,
@@ -265,7 +265,7 @@ window.onload = function() {
 
   // HSDS Taxonomy
   const open_banking_branches = SwaggerUIBundle({
-    url: "https://raw.githubusercontent.com/{{ site.github_org}}/{{ site.github_repo}}/master/_data/api-commons/openapi-hsda-taxonomy.yaml",
+    url: "https://raw.githubusercontent.com/{{ site.github_org}}/{{ site.github_repo}}/master/_data/api-commons/branches-openapi.yaml",
     dom_id: '#open-banking-branches',
     presets: [
       SwaggerUIBundle.presets.apis,
@@ -280,7 +280,7 @@ window.onload = function() {
 
   // HSDS Bulk
   const open_banking_personal_accounts = SwaggerUIBundle({
-    url: "https://raw.githubusercontent.com/{{ site.github_org}}/{{ site.github_repo}}/master/_data/api-commons/openapi-hsda-bulk.yaml",
+    url: "https://raw.githubusercontent.com/{{ site.github_org}}/{{ site.github_repo}}/master/_data/api-commons/personal-accounts-openapi.yaml",
     dom_id: '#open-banking-personal-accounts',
     presets: [
       SwaggerUIBundle.presets.apis,
@@ -295,7 +295,7 @@ window.onload = function() {
 
   // HSDS Meta
   const open_banking_business_accounts = SwaggerUIBundle({
-    url: "https://raw.githubusercontent.com/{{ site.github_org}}/{{ site.github_repo}}/master/_data/api-commons/openapi-hsda-meta.yaml",
+    url: "https://raw.githubusercontent.com/{{ site.github_org}}/{{ site.github_repo}}/master/_data/api-commons/business-accounts-openapi.yaml",
     dom_id: '#open-banking-business-accounts',
     presets: [
       SwaggerUIBundle.presets.apis,
@@ -310,7 +310,7 @@ window.onload = function() {
 
   // HSDS Management
   const open_banking_unsecured_sme_loans = SwaggerUIBundle({
-    url: "https://raw.githubusercontent.com/{{ site.github_org}}/{{ site.github_repo}}/master/_data/api-commons/openapi-hsda-management.yaml",
+    url: "https://raw.githubusercontent.com/{{ site.github_org}}/{{ site.github_repo}}/master/_data/api-commons/sme-unsecured-loan-openapi.yaml",
     dom_id: '#open-banking-unsecured-sme-loans',
     presets: [
       SwaggerUIBundle.presets.apis,
@@ -325,7 +325,7 @@ window.onload = function() {
 
   // HSDS Utility
   const open_banking_credit_card = SwaggerUIBundle({
-    url: "https://raw.githubusercontent.com/{{ site.github_org}}/{{ site.github_repo}}/master/_data/api-commons/openapi-hsda-utility.yaml",
+    url: "https://raw.githubusercontent.com/{{ site.github_org}}/{{ site.github_repo}}/master/_data/api-commons/credit-card-openapi.yaml",
     dom_id: '#open-banking-credit-card',
     presets: [
       SwaggerUIBundle.presets.apis,
