@@ -58,7 +58,7 @@ layout: page
 		</header>
 		<p>Open Banking is doing interesting work in the UK when it comes to banking APIs. They have produced a set of banking API specifications, along with a directory, dispute and communication management, which is really moving forward the banking API conversation in the UK.</p>
     <p>I have been learning more about the Open Banking API specification, and would like to get the word out about their work, and hopefully contribute to the conversation, as well as tooling available when it comes to banking APIs in the UK.</p>
-    <p>This project is meant to be a forkable project that any bank in the UK, or anywhere else for that matter, publish, change, and turn into their own API portal. This project is a work in progress, and I will be releasing more features soon.
+    <p>This project is meant to be a forkable project that any bank in the UK, or anywhere else for that matter, publish, change, and turn into their own API {{ site.github_repo }}. This project is a work in progress, and I will be releasing more features soon.
 	</div>
 	<span class="image object">
 		<a href="http://org.open.referral.adopta.agency/"><img src="/images/kin-lane-api-evangelist-cartoon.png" alt="" width="100%" /></a>
@@ -352,13 +352,13 @@ window.onload = function() {
 			<tr style="border: 1px solid #FFF;">
 
 				<td align="center" valign="top" style="background-color:#FFF;">
-					<a href="https://github.com/human-services/portal/issues"><img src="http://drone.prototype.apievangelist.com/images/bw-github.png" width="75" align="center"></a>
-					<a href="https://github.com/human-services/portal/issues">Github</a>
+					<a href="https://github.com/{{ site.github_org }}/{{ site.github_repo }}/issues"><img src="http://drone.prototype.apievangelist.com/images/bw-github.png" width="75" align="center"></a>
+					<a href="https://github.com/{{ site.github_org }}/{{ site.github_repo }}/issues">Github</a>
 				</td>
 
 				<td align="center" valign="top" style="background-color:#FFF;">
-					<a href="https://twitter.com/apievangelist/"><img src="http://drone.prototype.apievangelist.com/images/bw-twitter-icon.png" width="75" align="center"></a>
-					<a href="https://twitter.com/apievangelist/">Twitter</a>
+					<a href="https://twitter.com/apievangelist"><img src="http://drone.prototype.apievangelist.com/images/bw-twitter-icon.png" width="75" align="center"></a>
+					<a href="https://twitter.com/apievangelist">Twitter</a>
 				</td>
 
 				<td align="center" valign="top" style="background-color:#FFF;">
@@ -372,5 +372,32 @@ window.onload = function() {
 	</div>
 	<span class="image object">
 		<img src="/images/support-rectangular.png" alt="" width="5%" />
+	</span>
+</section>
+
+<!-- About This Research -->
+<a name="About"></a>
+<section id="banner">
+	<div class="content">
+		<header>
+			<h2>About Open Banking Blueprint</h2>
+		</header>
+		<p>This project is a work in progress. I will be dedicating a couple hours to it each week. If there is anything you'd like to see done let me know using the <a href="https://github.com/{{ site.github_org }}/{{ site.github_repo }}/issues">Github issues</a>.
+    <p>Some of the items I will be adding next:</p>
+    <ul>
+      <li>Mock version of the API for making requests and seeing response.</li>
+      <li>Sandbox version of the API for easily deploying and virtualizing.</li>
+      <li>Generate SDKs in a variety of programming languages for all APIs.</li>
+      <li>Create a simple getting started page onboarding with the API.</li>
+      <li>Publish a roadmap, issues, and change log page / section.</li>
+      <li>Publish a frequently asked quesitons page / section.</li>
+      <li>Setup API monitoring dashboard using API Science / API Metrics.</li>
+      <li>Publish APIs.json index for serchability.</li>
+      <li>Add Postman collection for each of sets of APIs.</li>
+    </ul>
+    <p>Eventually this will be a complete banking API developer portal that anyone can fork and customize for their own API.</p>
+	</div>
+	<span class="image object">
+		<img src="{{ about_content.image }}" alt="" width="25%" />
 	</span>
 </section>
