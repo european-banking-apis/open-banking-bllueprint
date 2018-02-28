@@ -1,0 +1,94 @@
+swagger: '2.0'
+basePath: /api/v1rc2
+paths:
+  '/aspsp/{aspsp_id}/software/{software_id}':
+    parameters:
+      - description: ASPSP ID
+        name: aspsp_id
+        in: path
+        required: true
+        type: string
+      - description: Software Statement ID
+        name: software_id
+        in: path
+        required: true
+        type: string
+    get:
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+        '502':
+          description: Bad Gateway
+      summary: The Software Statement Assertion returned by the API is an RFC 7515-type JSON Web Signature (JWS)
+      description: 'Its JWT-style payload is defined in the Open Banking Security Profile v1.0.0, Section 2. Client Registration and based on RFC 7517.'
+      operationId: get_add_software_statement_to_tpp
+      security:
+        - Bearer: []
+      tags:
+        - default
+  '/tpp/{tpp_id}/software/{software_id}':
+    parameters:
+      - description: TPP ID
+        name: tpp_id
+        in: path
+        required: true
+        type: string
+      - description: Software Statement ID
+        name: software_id
+        in: path
+        required: true
+        type: string
+    get:
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+        '502':
+          description: Bad Gateway
+      summary: The Software Statement Assertion returned by the API is an RFC 7515-type JSON Web Signature (JWS)
+      description: 'Its JWT-style payload is defined in the Open Banking Security Profile v1.0.0, Section 2. Client Registration and based on RFC 7517.'
+      operationId: get_add_software_statement_to_tpp_2
+      security:
+        - Bearer: []
+      tags:
+        - default
+info:
+  title: SSA Retrieval API
+  version: 1rc2
+  description: Retrieves Software Statement Assertions
+produces:
+  - application/json
+consumes:
+  - application/json
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    in: header
+    name: Authorization
+tags:
+  - name: default
+    description: Default namespace
+responses:
+  ParseError:
+    description: When a mask can't be parsed
+  MaskError:
+    description: When any error occurs on mask

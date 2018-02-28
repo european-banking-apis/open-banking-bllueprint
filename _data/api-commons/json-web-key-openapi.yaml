@@ -1,0 +1,192 @@
+swagger: '2.0'
+info:
+  version: '2017-07-12T11:48:23Z'
+  title: jwks
+host: jwks.openbanking.cc
+basePath: /jwks
+schemes:
+  - https
+paths:
+  '{orgId}/{softwareId}.jwks/':
+    get:
+      summary: 'The API returns an RFC 7517-type JSON Web Key Set (JWKS) for the given ORG ID and Software Statement ID as a flat file.'
+      description: 'The JWKS file returned by the API contains public JSON Web Keys (JWK) for the given Software Statement Id belonging to the given OBOrganisationId, a TPP, an ASPSP, or Open Banking Ltd.'
+      operationId: getOrgSoftwareId
+      produces:
+        - application/jwk+json
+      parameters:
+        - name: orgId
+          in: path
+          description: The given Open Banking Organisation Id
+          required: true
+          type: string
+        - name: softwareId
+          in: path
+          description: The given Software Statement Id
+          required: true
+          type: string
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            type: object
+            title: JSON Web Key Set
+            properties:
+              keys:
+                type: array
+                items:
+                  type: object
+                  title: JSON Web Key (RFC 7517)
+  '{orgId}/{orgId}.jwks':
+    get:
+      summary: 'The API returns an RFC 7517-type JSON Web Key Set (JWKS) for the given ORG ID as a flat file.'
+      description: 'The JWKS file returned by the API contains public JSON Web Keys (JWK) for the given OBOrganisationId, a TPP, an ASPSP, or Open Banking Ltd.'
+      operationId: getOrgJWKs
+      produces:
+        - application/jwk+json
+      parameters:
+        - name: orgId
+          in: path
+          description: The given Open Banking Organisation Id
+          required: true
+          type: string
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            type: object
+            title: JSON Web Key Set
+            properties:
+              keys:
+                type: array
+                items:
+                  type: object
+                  title: JSON Web Key (RFC 7517)
+  '{orgId}/{kid}.pem/':
+    get:
+      summary: 'The API returns an RFC 7468-type PEM for the given ORG ID and Certificate KID as a flat file.'
+      description: 'The PEM file returned by the API contains public Certificate with the given kid belonging to the given OBOrganisationId, a TPP, an ASPSP, or Open Banking Ltd.'
+      operationId: kidGet
+      produces:
+        - application/x-pem-file
+      parameters:
+        - name: orgId
+          in: path
+          description: The given Open Banking Organisation Id
+          required: true
+          type: string
+        - name: kid
+          in: path
+          description: The given Certificate kid
+          required: true
+          type: string
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            type: object
+            title: JSON Web Key Set
+            properties:
+              keys:
+                type: array
+                items:
+                  type: object
+                  title: JSON Web Key (RFC 7517)
+  '{orgId}/revoked/{softwareId}.jwks':
+    get:
+      summary: 'The API returns an RFC 7517-type revoked JSON Web Key Set (JWKS) for the given ORG ID and Software Statement ID as a flat file.'
+      description: 'The JWKS file returned by the API contains revoked public JSON Web Keys (JWK) for the given Software Statement Id belonging to the given OBOrganisationId, a TPP, an ASPSP, or Open Banking Ltd.'
+      operationId: softwareIdGet
+      produces:
+        - application/jwk+json
+      parameters:
+        - name: orgId
+          in: path
+          description: The given Open Banking Organisation Id
+          required: true
+          type: string
+        - name: softwareId
+          in: path
+          description: The given Software Statement Id
+          required: true
+          type: string
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            type: object
+            title: JSON Web Key Set
+            properties:
+              keys:
+                type: array
+                items:
+                  type: object
+                  title: JSON Web Key (RFC 7517)
+  '{orgId}/revoked/{orgId}.jwks/':
+    get:
+      summary: 'The API returns an RFC 7517-type revoked JSON Web Key Set (JWKS) for the given ORG ID as a flat file.'
+      description: 'The JWKS file returned by the API contains revoked public JSON Web Keys (JWK) for the given OBOrganisationId, a TPP, an ASPSP, or Open Banking Ltd.'
+      operationId: getOrgRevokedOrd
+      produces:
+        - application/jwk+json
+      parameters:
+        - name: orgId
+          in: path
+          description: The given Open Banking Organisation Id
+          required: true
+          type: string
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            type: object
+            title: JSON Web Key Set
+            properties:
+              keys:
+                type: array
+                items:
+                  type: object
+                  title: JSON Web Key (RFC 7517)
+  '{orgId}/revoked/{kid}.pem/':
+    get:
+      summary: 'The API returns an RFC 7468-type revoked PEM for the given ORG ID and Certificate KID as a flat file.'
+      description: 'The PEM file returned by the API contains revoked public Certificate with the given kid belonging to the given OBOrganisationId, a TPP, an ASPSP, or Open Banking Ltd.'
+      operationId: getOrgRevokedPem
+      produces:
+        - application/x-pem-file
+      parameters:
+        - name: orgId
+          in: path
+          description: The given Open Banking Organisation Id
+          required: true
+          type: string
+        - name: kid
+          in: path
+          description: The given Certificate kid
+          required: true
+          type: string
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            type: object
+            title: JSON Web Key Set
+            properties:
+              keys:
+                type: array
+                items:
+                  type: object
+                  title: JSON Web Key (RFC 7517)
+definitions:
+  JWKS:
+    type: object
+    title: JSON Web Key Set
+    properties:
+      keys:
+        type: array
+        items:
+          type: object
+          title: JSON Web Key (RFC 7517)
+  JWK:
+    type: object
+    title: JSON Web Key (RFC 7517)

@@ -1,0 +1,374 @@
+---
+layout: page
+---
+
+<script src="/js/ui/swagger-ui-bundle.js"> </script>
+<script src="/js/ui/swagger-ui-standalone-preset.js"> </script>
+
+<style>
+.topbar
+  {
+  display:none;
+  }
+.info
+  {
+  display:none;
+  }
+</style>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+          <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199V17c0 .549.428 1.139.951 1.307l1.197.387C5.672 18.861 6.55 19 7.1 19h5.8c.549 0 1.428-.139 1.951-.307l1.196-.387c.524-.167.953-.757.953-1.306V9.199C17 8.646 16.352 8 15.8 8z"></path>
+    </symbol>
+
+    <symbol viewBox="0 0 20 20" id="locked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V8H4c-.553 0-1 .646-1 1.199V17c0 .549.428 1.139.951 1.307l1.197.387C5.672 18.861 6.55 19 7.1 19h5.8c.549 0 1.428-.139 1.951-.307l1.196-.387c.524-.167.953-.757.953-1.306V9.199C17 8.646 16.352 8 15.8 8zM12 8H8V5.199C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8z"/>
+    </symbol>
+
+    <symbol viewBox="0 0 20 20" id="close">
+      <path d="M14.348 14.849c-.469.469-1.229.469-1.697 0L10 11.819l-2.651 3.029c-.469.469-1.229.469-1.697 0-.469-.469-.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-.469-.469-.469-1.228 0-1.697.469-.469 1.228-.469 1.697 0L10 8.183l2.651-3.031c.469-.469 1.228-.469 1.697 0 .469.469.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c.469.469.469 1.229 0 1.698z"/>
+    </symbol>
+
+    <symbol viewBox="0 0 20 20" id="large-arrow">
+      <path d="M13.25 10L6.109 2.58c-.268-.27-.268-.707 0-.979.268-.27.701-.27.969 0l7.83 7.908c.268.271.268.709 0 .979l-7.83 7.908c-.268.271-.701.27-.969 0-.268-.269-.268-.707 0-.979L13.25 10z"/>
+    </symbol>
+
+    <symbol viewBox="0 0 20 20" id="large-arrow-down">
+      <path d="M17.418 6.109c.272-.268.709-.268.979 0s.271.701 0 .969l-7.908 7.83c-.27.268-.707.268-.979 0l-7.908-7.83c-.27-.268-.27-.701 0-.969.271-.268.709-.268.979 0L10 13.25l7.418-7.141z"/>
+    </symbol>
+
+
+    <symbol viewBox="0 0 24 24" id="jump-to">
+      <path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.41L5.83 13H21V7z"/>
+    </symbol>
+
+    <symbol viewBox="0 0 24 24" id="expand">
+      <path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/>
+    </symbol>
+
+  </defs>
+</svg>
+
+<!-- Banner -->
+<section id="banner">
+	<div class="content">
+		<header>
+			<h2>My Name is Kin Lane, this is my Open Banking API Portal Template</h2>
+		</header>
+		<p></p>
+	</div>
+	<span class="image object">
+		<a href="http://org.open.referral.adopta.agency/"><img src="/images/kin-lane-api-evangelist-cartoon.png" alt="" width="100%" /></a>
+	</span>
+</section>
+
+<!-- Getting Started -->
+<section>
+	<header>
+		<a name="Getting Started"></a>
+		<h2>Getting Started</h2>
+	</header>
+  <p></p>
+  <p>Here is a quick list of the eight services, which there are separate documentation available below:</p>
+  <ul>
+    <li><strong><a href="/#HSDA Full">HSDA Full</a></strong> - The core service for managing organizations, locations, services, contacts, and other sub-resouces in single API calls.</li>
+    <li><strong><a href="/#HSDA">HSDA</a></strong> - The core service for managing organizations, locations, services, contacts, and other sub-resouces.</li>
+    <li><strong><a href="/#HSDA Search">HSDA Search</a></strong> - A spin-off search service from the core service, focusing exclusively on searching across HSDA resources.</li>
+    <li><strong><a href="/#HSDA Bulk">HSDA Bulk</a></strong> - An indpendent service for managing bulk submissions of data that can be then executed as job(s) on schedule.</li>
+    <li><strong><a href="/#HSDA Meta">HSDA Meta</a></strong> - An independent service for recording all transactions executed via any HSDA implementation, providing comprehensive logging.</li>
+    <li><strong><a href="/#HSDA Taxonomy">HSDA Taxonomy</a></strong> - A spin-off service from the core specification to evolve taxonomy across core resources in multiple formats.</li>
+    <li><strong><a href="/#HSDA Management">HSDA Management</a></strong> - The simple API management layer for HSDA, leveraging Github authentication to be able to make calls to HSDA APIs.</li>
+    <li><strong><a href="/#HSDA Orchestration">HSDA Orchestration</a></strong> - An independent service for handling the orchestration of activities across HSDA resources, based on events or schedule.</li>
+    <li><strong><a href="/#HSDA Utility">HSDA Utility</a></strong> - A set of utility APIs for manaing HSDA services, including validation, security, and other operational level needs for implementations.</li>
+  </ul>
+  <p></p>
+</section>
+
+<!-- Banner -->
+<section id="banner">
+	<div class="content">
+		<header>
+      <a name="Authentication"></a>
+			<h2 id="auth-header">Authentication</h2>
+		</header>
+		<p></p>
+	</div>
+	<span class="image object">
+		<a href="http://hsda.github.adopta.agency/index.php?action=login"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github-square.png" alt="" width="100%" /></a>
+	</span>
+</section>
+
+<!-- Banner -->
+<section id="banner">
+	<div class="content">
+		<header>
+      <a name="Authentication"></a>
+			<h2 id="auth-header">Read / Write APIs</h2>
+		</header>
+		<p>This is the heart of the Open Banking API specification, providing detailed read and write APIs for both accounts and payment APIs. Providing the most value to the personal and business API customers, as well as other key stakeholders.</p>
+	</div>
+	<span class="image object">
+		<img src="https://open.banking.blueprint.apievangelist.com/images/read-write.png" alt="" width="100%" />
+	</span>
+</section>
+
+<!-- Full -->
+<section>
+	<header>
+		<a name="Open Banking - Accounts"></a>
+		<h2>Accounts</h2>
+	</header>
+  <p>This is a read / write API for accessing all the details of a consumer or banking account.</p>
+  <div id="open-banking-accounts"></div>
+  <p>This is just an OpenAPI definition, published using Swagger UI--it is not a functional API or mock yet.</p>
+</section>
+
+<!-- HSDA -->
+<section>
+	<header>
+		<a name="Open Banking - Payments"></a>
+		<h2>Payments</h2>
+	</header>
+  <p>This is a read / write API for payments, and payment submissionfs for a consumer or banking account.</p>
+  <div id="open-banking-payments"></div>
+  <p>This is just an OpenAPI definition, published using Swagger UI--it is not a functional API or mock yet.</p>
+</section>
+
+<!-- Banner -->
+<section id="banner">
+	<div class="content">
+		<header>
+      <a name="Open Banking - Public Data"></a>
+			<h2 id="auth-header">Public Data APIs</h2>
+		</header>
+		<p>These are the APIs which provie access to the  public profile, products, and services for the banks. Providing access to the public side of each institution with an API.</p>
+	</div>
+	<span class="image object">
+		<img src="https://open.banking.blueprint.apievangelist.com/images/atm.png" alt="" width="100%" />
+	</span>
+</section>
+
+<!-- Search -->
+<section>
+	<header>
+		<a name="Public Data - ATMs"></a>
+		<h2>Automated Teller Machines (ATMs)</h2>
+	</header>
+  <p>A public API for accessing ATM information and locations for all participating banks.</p>
+  <div id="open-banking-atms"></div>
+  <p>This is just an OpenAPI definition, published using Swagger UI--it is not a functional API or mock yet.</p>
+</section>
+ng
+<!-- Taxonomy -->
+<section>
+	<header>
+		<a name="Public Data - Branches"></a>
+		<h2>Bank Branches</h2>
+	</header>
+  <p>A public API for accessing branch information and location for all participating banks.</p>
+  <div id="open-banking-branches"></div>
+  <p>This is just an OpenAPI definition, published using Swagger UI--it is not a functional API or mock yet.</p>
+</section>
+
+<!-- Bulk -->
+<section>
+	<header>
+		<a name="Public Data - Personal Accounts"></a>
+		<h2>Personal Accounts</h2>
+	</header>
+  <p>A public API for accessing personal account product information for all participating banks.</p>
+  <div id="open-banking-personal-accounts"></div>
+  <p>This is just an OpenAPI definition, published using Swagger UI--it is not a functional API or mock yet.</p>
+</section>
+
+<!-- Meta -->
+<section>
+	<header>
+		<a name="Public Data - Business Accounts"></a>
+		<h2>Business Accounts</h2>
+	</header>
+  <p>A public API for accessing business account product information for all participating banks.</p>
+  <div id="open-banking-business-accounts"></div>
+  <p>This is just an OpenAPI definition, published using Swagger UI--it is not a functional API or mock yet.</p>
+</section>
+
+<!-- Management -->
+<section>
+	<header>
+		<a name="Public Data - Unsecured SME Loans"></a>
+		<h2>Unsecured SME Loans</h2>
+	</header>
+  <p>A public API for accessing unsecured SME loan information for all participating banks.</p>
+  <div id="open-banking-unsecured-sme-loans"></div>
+  <p>This is just an OpenAPI definition, published using Swagger UI--it is not a functional API or mock yet.</p>
+</section>
+
+<!-- Orchestration -->
+<section>
+	<header>
+		<a name="Public Data - Commercial Credit Cards"></a>
+		<h2>Commercial Credit Cards</h2>
+	</header>
+  <p>A public API for accessing commercial credit card information for all participating banks.</p>
+  <div id="open-banking-credit-card"></div>
+  <p>This is just an OpenAPI definition, published using Swagger UI--it is not a functional API or mock yet.</p>
+</section>
+
+<script>
+window.onload = function() {
+
+  // HSDS
+  const open_banking_accounts = SwaggerUIBundle({
+    url: "http://developer.open.referral.adopta.agency/openapi/hsda-full.yaml",
+    dom_id: '#open-banking-accounts',
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ],
+    plugins: [
+      SwaggerUIBundle.plugins.DownloadUrl
+    ],
+    layout: "StandaloneLayout"
+  })
+  window.ui = open_banking_accounts;
+
+  // HSDS
+  const open_banking_payments = SwaggerUIBundle({
+    url: "http://developer.open.referral.adopta.agency/openapi/hsda.yaml",
+    dom_id: '#open-banking-payments',
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ],
+    plugins: [
+      SwaggerUIBundle.plugins.DownloadUrl
+    ],
+    layout: "StandaloneLayout"
+  })
+  window.ui = open_banking_payments;
+
+  // HSDS Search
+  const open_banking_atms = SwaggerUIBundle({
+    url: "https://raw.githubusercontent.com/{{ site.github_org}}/{{ site.github_repo}}/master/_data/api-commons/openapi-hsda-search.yaml",
+    dom_id: '#open-banking-atms',
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ],
+    plugins: [
+      SwaggerUIBundle.plugins.DownloadUrl
+    ],
+    layout: "StandaloneLayout"
+  })
+  window.ui = open_banking_atms;
+
+  // HSDS Taxonomy
+  const open_banking_branches = SwaggerUIBundle({
+    url: "https://raw.githubusercontent.com/{{ site.github_org}}/{{ site.github_repo}}/master/_data/api-commons/openapi-hsda-taxonomy.yaml",
+    dom_id: '#open-banking-branches',
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ],
+    plugins: [
+      SwaggerUIBundle.plugins.DownloadUrl
+    ],
+    layout: "StandaloneLayout"
+  })
+  window.ui = open_banking_branches;
+
+  // HSDS Bulk
+  const open_banking_personal_accounts = SwaggerUIBundle({
+    url: "https://raw.githubusercontent.com/{{ site.github_org}}/{{ site.github_repo}}/master/_data/api-commons/openapi-hsda-bulk.yaml",
+    dom_id: '#open-banking-personal-accounts',
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ],
+    plugins: [
+      SwaggerUIBundle.plugins.DownloadUrl
+    ],
+    layout: "StandaloneLayout"
+  })
+  window.ui = open_banking_personal_accounts;
+
+  // HSDS Meta
+  const open_banking_business_accounts = SwaggerUIBundle({
+    url: "https://raw.githubusercontent.com/{{ site.github_org}}/{{ site.github_repo}}/master/_data/api-commons/openapi-hsda-meta.yaml",
+    dom_id: '#open-banking-business-accounts',
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ],
+    plugins: [
+      SwaggerUIBundle.plugins.DownloadUrl
+    ],
+    layout: "StandaloneLayout"
+  })
+  window.ui = open_banking_business_accounts;
+
+  // HSDS Management
+  const open_banking_unsecured_sme_loans = SwaggerUIBundle({
+    url: "https://raw.githubusercontent.com/{{ site.github_org}}/{{ site.github_repo}}/master/_data/api-commons/openapi-hsda-management.yaml",
+    dom_id: '#open-banking-unsecured-sme-loans',
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ],
+    plugins: [
+      SwaggerUIBundle.plugins.DownloadUrl
+    ],
+    layout: "StandaloneLayout"
+  })
+  window.ui = open_banking_unsecured_sme_loans;
+
+  // HSDS Utility
+  const open_banking_credit_card = SwaggerUIBundle({
+    url: "https://raw.githubusercontent.com/{{ site.github_org}}/{{ site.github_repo}}/master/_data/api-commons/openapi-hsda-utility.yaml",
+    dom_id: '#open-banking-credit-card',
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ],
+    plugins: [
+      SwaggerUIBundle.plugins.DownloadUrl
+    ],
+    layout: "StandaloneLayout"
+  })
+  window.ui = open_banking_credit_card;
+}
+</script>
+
+<section id="banner">
+	<div class="content">
+		<header>
+			<h2>Support</h2>
+		</header>
+		<p>There are three ways that you can get support when using the Drone API--consider one of the following channels when you have a question, comment, or some feedback regarding the API and integration.</p>
+		<table cellpadding="10" cellspacing="10" width="100%">
+			<tr style="border: 1px solid #FFF;">
+
+				<td align="center" valign="top" style="background-color:#FFF;">
+					<a href="https://github.com/human-services/portal/issues"><img src="http://drone.prototype.apievangelist.com/images/bw-github.png" width="75" align="center"></a>
+					<a href="https://github.com/human-services/portal/issues">Github</a>
+				</td>
+
+				<td align="center" valign="top" style="background-color:#FFF;">
+					<a href="https://twitter.com/apievangelist/"><img src="http://drone.prototype.apievangelist.com/images/bw-twitter-icon.png" width="75" align="center"></a>
+					<a href="https://twitter.com/apievangelist/">Twitter</a>
+				</td>
+
+				<td align="center" valign="top" style="background-color:#FFF;">
+					<a href="/cdn-cgi/l/email-protection#e38a8d858ca382938a8695828d84868f8a9097cd808c8e"><img src="http://drone.prototype.apievangelist.com/images/bw-email-at.png" width="75" align="center"></a>
+					<a href="/cdn-cgi/l/email-protection#6f060109002f0e1f060a190e01080a03061c1b410c0002">Email</a>
+				</td>
+
+			</tr>
+		</table>
+		<p>It is recommended that you start with submitting a Github issue, then maybe tweet at us. If your questions or comments require some privacy you should use email. Make sure you look through the existing issues before submitting a new one.</p>
+	</div>
+	<span class="image object">
+		<img src="/images/support-rectangular.png" alt="" width="5%" />
+	</span>
+</section>

@@ -1,0 +1,44 @@
+name: Open Banking Blueprint
+url: http://open.banking.blueprint.apievangelist.com/
+
+author:
+  name: 'Kin Lane'
+  email: 'info@apievangelist.com'
+markdown: kramdown
+
+permalink: /:categories/:year/:month/:day/:title/
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+
+get_color: 009900;
+post_color: 0000ff;
+put_color: FF0080;
+delete_color: FF9900;
+
+github_org: european-banking-apis
+github_repo: open-banking-blueprint
+
+# URL to the issues page for this
+support_title: Support
+support_description: If you need any help, have questions, or would like to get involved, please use the following links.
+support_email: info@apievangelist.com
+support_twitter: apievangelist
+
+# Login area
+login:
+signup:
+
+# blog stuff
+permalink: /:categories/:year/:month/:day/:title/
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", ".DS_Store"]
+
+paginate: 150
+paginate_path: "/blog/page:num"
+
+status_key: ASzjKOjFKPYC0D-RBGPWtw
+status_id: 1572918
+
+# Footer
+footer_title: API Evangelist
+footer_link: http://apievangelist.com
+footer_image_source: https://s3.amazonaws.com/kinlane-productions/footer/empowered-by-you-banner.png
+footer_image_width: 60

@@ -1,0 +1,17 @@
+- title: Support
+  image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-support.png
+  header: There are three ways that you can get support when using the Open Referral API--consider one of the following channels when you have a question, comment, or some feedback regarding the API and integration.
+  footer: It is recommended that you start with submitting a Github issue, then maybe tweet at us. If your questions or comments require some privacy you should use email. Make sure you look through the existing issues before submitting a new one.
+  resources:
+    - title: via Github
+      description:
+      image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github.png
+      url: https://github.com/miami-open-211/developer-portal/issues
+    - title: via Twitter
+      description:
+      image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-twitter-icon.png
+      url: https://twitter.com/open_referral/
+    - title: via Email
+      description:
+      image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-email-at.png
+      url: mailto:bloom@openreferral.org

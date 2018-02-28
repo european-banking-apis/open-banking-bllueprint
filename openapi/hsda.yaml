@@ -1,0 +1,59 @@
+---
+layout: none
+---
+{% assign openapi = site.data.api-commons.openapi-hsda %}swagger: "{{ openapi.swagger }}"
+info:
+  title: "{{ openapi.info.title }}"
+  description: "{{ openapi.info.description }}"
+  termsOfService: {{ openapi.info.termsOfService }}
+  contact:
+    name: {{ openapi.info.contact.name }}
+    url: {{ openapi.info.contact.url }}
+    email: {{ openapi.info.contact.email }}
+  license:
+    name: {{ openapi.info.license.name }}
+    url: {{ openapi.info.license.url }}
+  version: {{ openapi.info.version }}
+host: {{ openapi.host }}
+basePath: {{ openapi.basePath }}
+schemes:{% for scheme in openapi.schemes %}
+ - {{ scheme }} {% endfor %}
+produces:{% for produce in openapi.produces %}
+ - {{ produce }} {% endfor %}
+paths:{% for path in openapi.paths %}{% if path[0] contains "/full/" %}{% else %}
+  {{ path[0] }}:{% for verb in path[1] %}
+    {{ verb[0]}}:
+      summary: {{ verb[1].summary }}
+      description: {{ verb[1].description }}
+      operationId: {{ verb[1].operationId }}
+      parameters:{% for parameter in verb[1].parameters %}
+        - in: {{ parameter.in }}{% if parameter.in != "body" %}
+          type: {{ parameter.type }}{% endif %}{% if parameter.in == "path" %}
+          required: true{% endif %}
+          name: {{ parameter.name }}{% if parameter.in != "body" and parameter.description != "" %}
+          description: {{ parameter.description }}{% endif %}{% if parameter.in == "body" %}
+          schema: 
+            $ref: "{{ parameter.schema.['$ref'] }}"{% endif %}{% endfor %}
+      responses:{% for response in verb[1].responses %}
+        '{{ response[0] }}':
+          description: {{ response[1].description }}
+          schema:
+            type: {{ response[1].schema.type }}
+            items:
+              $ref: "{{ response[1].schema.items.['$ref'] }}"{% endfor %}
+      tags:{% for tag in verb[1].tags %}
+        - {{ tag }}{% endfor %}{% endfor %}{% endif %}{% endfor %}
+securityDefinitions:{% for securityDefinition in openapi.securityDefinitions %}
+  {{ securityDefinition[0] }}:
+    type: {{ securityDefinition[1].type }}
+    in: {{ securityDefinition[1].in }}
+    name: {{ securityDefinition[1].name }}{% endfor %}
+definitions:{% for definition in openapi.definitions %}
+  {{ definition[0] }}:
+    properties:{% for property in definition[1].properties %}
+      {{ property[0] }}:
+        description: '{{ property[1].description }}'
+        type: {{ property[1].type }}{% if property[1].type == "array" %}
+        items: 
+          $ref: "{{ property[1].items.['$ref'] }}"{% endif %}{% endfor %}{% endfor %}
+        
