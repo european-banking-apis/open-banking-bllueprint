@@ -56,7 +56,9 @@ layout: page
 		<header>
 			<h2>My Name is Kin Lane, this is my Open Banking API Portal Template</h2>
 		</header>
-		<p></p>
+		<p>Open Banking is doing interesting work in the UK when it comes to banking APIs. They have produced a set of banking API specifications, along with a directory, dispute and communication management, which is really moving forward the banking API conversation in the UK.</p>
+    <p>I have been learning more about the Open Banking API specification, and would like to get the word out about their work, and hopefully contribute to the conversation, as well as tooling available when it comes to banking APIs in the UK.</p>
+    <p>This project is meant to be a forkable project that any bank in the UK, or anywhere else for that matter, publish, change, and turn into their own API portal. This project is a work in progress, and I will be releasing more features soon. 
 	</div>
 	<span class="image object">
 		<a href="http://org.open.referral.adopta.agency/"><img src="/images/kin-lane-api-evangelist-cartoon.png" alt="" width="100%" /></a>
@@ -72,17 +74,16 @@ layout: page
   <p></p>
   <p>Here is a quick list of the eight services, which there are separate documentation available below:</p>
   <ul>
-    <li><strong><a href="/#HSDA Full">HSDA Full</a></strong> - The core service for managing organizations, locations, services, contacts, and other sub-resouces in single API calls.</li>
-    <li><strong><a href="/#HSDA">HSDA</a></strong> - The core service for managing organizations, locations, services, contacts, and other sub-resouces.</li>
-    <li><strong><a href="/#HSDA Search">HSDA Search</a></strong> - A spin-off search service from the core service, focusing exclusively on searching across HSDA resources.</li>
-    <li><strong><a href="/#HSDA Bulk">HSDA Bulk</a></strong> - An indpendent service for managing bulk submissions of data that can be then executed as job(s) on schedule.</li>
-    <li><strong><a href="/#HSDA Meta">HSDA Meta</a></strong> - An independent service for recording all transactions executed via any HSDA implementation, providing comprehensive logging.</li>
-    <li><strong><a href="/#HSDA Taxonomy">HSDA Taxonomy</a></strong> - A spin-off service from the core specification to evolve taxonomy across core resources in multiple formats.</li>
-    <li><strong><a href="/#HSDA Management">HSDA Management</a></strong> - The simple API management layer for HSDA, leveraging Github authentication to be able to make calls to HSDA APIs.</li>
-    <li><strong><a href="/#HSDA Orchestration">HSDA Orchestration</a></strong> - An independent service for handling the orchestration of activities across HSDA resources, based on events or schedule.</li>
-    <li><strong><a href="/#HSDA Utility">HSDA Utility</a></strong> - A set of utility APIs for manaing HSDA services, including validation, security, and other operational level needs for implementations.</li>
+    <li><strong><a href="/#Open Banking - Accounts">Read / Write Accounts</a></strong> - The read/write APIs for managing accounts.</li>
+    <li><strong><a href="/#Open Banking - Payments">Read / Write Payments</a></strong> - The read/write APIs for managing payments.</li>
+    <li><strong><a href="/#Public Data - ATMs">Public Data - ATMs</a></strong> - The public data for bank ATMs.</li>
+    <li><strong><a href="/#Public Data - Branches">Public Branches - ATMs</a></strong> - The public data for bank ATMs.</li>
+    <li><strong><a href="/#Public Data - Personal Accounts">Public Data - Personal Accounts</a></strong> - The public data for bank personal accounts.</li>
+    <li><strong><a href="/#Public Data - Business Accounts">Public Data - Business Accounts</a></strong> - The public data for bank business accounts.</li>
+    <li><strong><a href="/#Public Data - Unsecured SME Loans">Public Data - SME Unsecured Loans</a></strong> - The public data for bank SME unsecured loans.</li>
+    <li><strong><a href="/#Public Data - Commercial Credit Cards">Public Data - Commercial Credit Cards</a></strong> - The public data for bank commercial credit cards.</li>
   </ul>
-  <p></p>
+  <p>This isn't a live API, or mock API, it is mean for presentation purposes at this moment--more to come. </p>
 </section>
 
 <!-- Banner -->
@@ -103,7 +104,7 @@ layout: page
 <section id="banner">
 	<div class="content">
 		<header>
-      <a name="Authentication"></a>
+      <a name="Read Write"></a>
 			<h2 id="auth-header">Read / Write APIs</h2>
 		</header>
 		<p>This is the heart of the Open Banking API specification, providing detailed read and write APIs for both accounts and payment APIs. Providing the most value to the personal and business API customers, as well as other key stakeholders.</p>
