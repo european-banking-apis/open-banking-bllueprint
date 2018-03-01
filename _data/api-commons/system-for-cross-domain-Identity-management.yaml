@@ -14,7 +14,7 @@ tags:
     description: Management of a user's account
   - name: Password Management
     description: Updating and recovery of password credentials
-  - name: OAuth2 Consent
+  - name: OAuth 2.0 Consent
     description: Management of user consents for OAuth2 clients
   - name: External Identity
     description: External identity link management for log in through external identity providers
@@ -24,13 +24,13 @@ tags:
     description: Delivery of verification codes to phone numbers
   - name: Email Validation
     description: Delivery of verification codes to email addresses
-  - name: OBAccounts Resource Type
+  - name: Accounts Resource Type
     description: Operations on the OBAccounts resource type
-  - name: OBThirdPartyProviders Resource Type
+  - name: Third Party Providers Resource Type
     description: Operations on the OBThirdPartyProviders resource type
-  - name: OBAccountPaymentServiceProviders Resource Type
+  - name: Account Payment Service Providers Resource Type
     description: Operations on the OBAccountPaymentServiceProviders resource type
-  - name: OBAuthorities Resource Type
+  - name: Authorities Resource Type
     description: Operations on the OBAuthorities resource type
 consumes:
   - application/scim+json
@@ -40,7 +40,7 @@ paths:
   /OBAccountPaymentServiceProviders:
     get:
       tags:
-        - OBAccountPaymentServiceProviders Resource Type
+        - Account Payment Service Providers Resource Type
       summary: Search for one or more resources
       parameters:
         - $ref: '#/parameters/attributes'
@@ -94,7 +94,7 @@ paths:
         url: 'https://tools.ietf.org/html/rfc7644#section-3.4.2'
     post:
       tags:
-        - OBAccountPaymentServiceProviders Resource Type
+        - Account Payment Service Providers Resource Type
       summary: Create a new resource
       description: Read only attributes included in the request body will be ignored.
       parameters:
@@ -125,7 +125,7 @@ paths:
   /OBAccountPaymentServiceProviders/.search:
     post:
       tags:
-        - OBAccountPaymentServiceProviders Resource Type
+        - Account Payment Service Providers Resource Type
       summary: Search for one or more resources using HTTP POST
       description: Useful for executing searches without passing parameters that may contain sensitive information on the URL.
       parameters:
@@ -179,7 +179,7 @@ paths:
   '/OBAccountPaymentServiceProviders/{id}':
     get:
       tags:
-        - OBAccountPaymentServiceProviders Resource Type
+        - Account Payment Service Providers Resource Type
       summary: Retrieve the resource
       parameters:
         - $ref: '#/parameters/id'
@@ -201,7 +201,7 @@ paths:
         url: 'https://tools.ietf.org/html/rfc7644#section-3.4.1'
     put:
       tags:
-        - OBAccountPaymentServiceProviders Resource Type
+        - Account Payment Service Providers Resource Type
       summary: Replace all attributes of the resource
       description: Read only attributes included in the request body will be ignored. Attributes omitted from the request body will be assumed to be not asserted by the client and will not be modified.
       parameters:
@@ -232,7 +232,7 @@ paths:
         url: 'https://tools.ietf.org/html/rfc7644#section-3.5.1'
     delete:
       tags:
-        - OBAccountPaymentServiceProviders Resource Type
+        - Account Payment Service Providers Resource Type
       summary: Delete the resource
       parameters:
         - $ref: '#/parameters/id'
@@ -250,7 +250,7 @@ paths:
         url: 'https://tools.ietf.org/html/rfc7644#section-3.6'
     patch:
       tags:
-        - OBAccountPaymentServiceProviders Resource Type
+        - Account Payment Service Providers Resource Type
       summary: Update one or more attributes of the resource
       parameters:
         - $ref: '#/parameters/id'
@@ -321,7 +321,7 @@ paths:
   '/OBAccountPaymentServiceProviders/{id}/consentHistory':
     get:
       tags:
-        - OAuth2 Consent
+        - OAuth 2.0 Consent
       summary: Search the user's history of consent events for OAuth2 clients
       parameters:
         - $ref: '#/parameters/id'
@@ -342,7 +342,7 @@ paths:
                 type: array
                 description: A multi-valued list of complex objects containing the requested resources.
                 items:
-                  $ref: '#/definitions/OAuth2 Consent History'
+                  $ref: '#/definitions/OAuth 2.0 Consent History'
               itemsPerPage:
                 type: integer
                 format: int32
@@ -374,7 +374,7 @@ paths:
   '/OBAccountPaymentServiceProviders/{id}/consentHistory/{eventId}':
     get:
       tags:
-        - OAuth2 Consent
+        - OAuth 2.0 Consent
       summary: Retrieves a known historical consent event for an OAuth2 client
       parameters:
         - $ref: '#/parameters/id'
@@ -389,7 +389,7 @@ paths:
         '200':
           description: The consent history resource
           schema:
-            $ref: '#/definitions/OAuth2 Consent History'
+            $ref: '#/definitions/OAuth 2.0 Consent History'
         default:
           description: An error occurred while executing the operation
           schema:
@@ -399,7 +399,7 @@ paths:
   '/OBAccountPaymentServiceProviders/{id}/consents':
     get:
       tags:
-        - OAuth2 Consent
+        - OAuth 2.0 Consent
       summary: Search for consents granted to OAuth2 clients by the user
       parameters:
         - $ref: '#/parameters/id'
@@ -420,7 +420,7 @@ paths:
                 type: array
                 description: A multi-valued list of complex objects containing the requested resources.
                 items:
-                  $ref: '#/definitions/OAuth2 Consent'
+                  $ref: '#/definitions/OAuth 2.0 Consent'
               itemsPerPage:
                 type: integer
                 format: int32
@@ -452,7 +452,7 @@ paths:
   '/OBAccountPaymentServiceProviders/{id}/consents/{clientName}':
     get:
       tags:
-        - OAuth2 Consent
+        - OAuth 2.0 Consent
       summary: Retrieves the consents granted to OAuth2 client by the user
       parameters:
         - $ref: '#/parameters/id'
@@ -467,7 +467,7 @@ paths:
         '200':
           description: The consent resource
           schema:
-            $ref: '#/definitions/OAuth2 Consent'
+            $ref: '#/definitions/OAuth 2.0 Consent'
         default:
           description: An error occurred while executing the operation
           schema:
@@ -476,7 +476,7 @@ paths:
         - oauth2: []
     delete:
       tags:
-        - OAuth2 Consent
+        - OAuth 2.0 Consent
       summary: Revokes the consents granted to an OAuth2 client by the user
       parameters:
         - $ref: '#/parameters/id'
@@ -1003,7 +1003,7 @@ paths:
   /OBAccounts:
     get:
       tags:
-        - OBAccounts Resource Type
+        - Accounts Resource Type
       summary: Search for one or more resources
       parameters:
         - $ref: '#/parameters/attributes'
@@ -1057,7 +1057,7 @@ paths:
         url: 'https://tools.ietf.org/html/rfc7644#section-3.4.2'
     post:
       tags:
-        - OBAccounts Resource Type
+        - Accounts Resource Type
       summary: Create a new resource
       description: Read only attributes included in the request body will be ignored.
       parameters:
@@ -1088,7 +1088,7 @@ paths:
   /OBAccounts/.search:
     post:
       tags:
-        - OBAccounts Resource Type
+        - Accounts Resource Type
       summary: Search for one or more resources using HTTP POST
       description: Useful for executing searches without passing parameters that may contain sensitive information on the URL.
       parameters:
@@ -1142,7 +1142,7 @@ paths:
   '/OBAccounts/{id}':
     get:
       tags:
-        - OBAccounts Resource Type
+        - Accounts Resource Type
       summary: Retrieve the resource
       parameters:
         - $ref: '#/parameters/id'
@@ -1164,7 +1164,7 @@ paths:
         url: 'https://tools.ietf.org/html/rfc7644#section-3.4.1'
     put:
       tags:
-        - OBAccounts Resource Type
+        - Accounts Resource Type
       summary: Replace all attributes of the resource
       description: Read only attributes included in the request body will be ignored. Attributes omitted from the request body will be assumed to be not asserted by the client and will not be modified.
       parameters:
@@ -1195,7 +1195,7 @@ paths:
         url: 'https://tools.ietf.org/html/rfc7644#section-3.5.1'
     delete:
       tags:
-        - OBAccounts Resource Type
+        - Accounts Resource Type
       summary: Delete the resource
       parameters:
         - $ref: '#/parameters/id'
@@ -1213,7 +1213,7 @@ paths:
         url: 'https://tools.ietf.org/html/rfc7644#section-3.6'
     patch:
       tags:
-        - OBAccounts Resource Type
+        - Accounts Resource Type
       summary: Update one or more attributes of the resource
       parameters:
         - $ref: '#/parameters/id'
@@ -1284,7 +1284,7 @@ paths:
   '/OBAccounts/{id}/consentHistory':
     get:
       tags:
-        - OAuth2 Consent
+        - OAuth 2.0 Consent
       summary: Search the user's history of consent events for OAuth2 clients
       parameters:
         - $ref: '#/parameters/id'
@@ -1305,7 +1305,7 @@ paths:
                 type: array
                 description: A multi-valued list of complex objects containing the requested resources.
                 items:
-                  $ref: '#/definitions/OAuth2 Consent History'
+                  $ref: '#/definitions/OAuth 2.0 Consent History'
               itemsPerPage:
                 type: integer
                 format: int32
@@ -1337,7 +1337,7 @@ paths:
   '/OBAccounts/{id}/consentHistory/{eventId}':
     get:
       tags:
-        - OAuth2 Consent
+        - OAuth 2.0 Consent
       summary: Retrieves a known historical consent event for an OAuth2 client
       parameters:
         - $ref: '#/parameters/id'
@@ -1352,7 +1352,7 @@ paths:
         '200':
           description: The consent history resource
           schema:
-            $ref: '#/definitions/OAuth2 Consent History'
+            $ref: '#/definitions/OAuth 2.0 Consent History'
         default:
           description: An error occurred while executing the operation
           schema:
@@ -1362,7 +1362,7 @@ paths:
   '/OBAccounts/{id}/consents':
     get:
       tags:
-        - OAuth2 Consent
+        - OAuth 2.0 Consent
       summary: Search for consents granted to OAuth2 clients by the user
       parameters:
         - $ref: '#/parameters/id'
@@ -1383,7 +1383,7 @@ paths:
                 type: array
                 description: A multi-valued list of complex objects containing the requested resources.
                 items:
-                  $ref: '#/definitions/OAuth2 Consent'
+                  $ref: '#/definitions/OAuth 2.0 Consent'
               itemsPerPage:
                 type: integer
                 format: int32
@@ -1415,7 +1415,7 @@ paths:
   '/OBAccounts/{id}/consents/{clientName}':
     get:
       tags:
-        - OAuth2 Consent
+        - OAuth 2.0 Consent
       summary: Retrieves the consents granted to OAuth2 client by the user
       parameters:
         - $ref: '#/parameters/id'
@@ -1430,7 +1430,7 @@ paths:
         '200':
           description: The consent resource
           schema:
-            $ref: '#/definitions/OAuth2 Consent'
+            $ref: '#/definitions/OAuth 2.0 Consent'
         default:
           description: An error occurred while executing the operation
           schema:
@@ -1439,7 +1439,7 @@ paths:
         - oauth2: []
     delete:
       tags:
-        - OAuth2 Consent
+        - OAuth 2.0 Consent
       summary: Revokes the consents granted to an OAuth2 client by the user
       parameters:
         - $ref: '#/parameters/id'
@@ -1966,7 +1966,7 @@ paths:
   /OBAuthorities:
     get:
       tags:
-        - OBAuthorities Resource Type
+        - Authorities Resource Type
       summary: Search for one or more resources
       parameters:
         - $ref: '#/parameters/attributes'
@@ -2020,7 +2020,7 @@ paths:
         url: 'https://tools.ietf.org/html/rfc7644#section-3.4.2'
     post:
       tags:
-        - OBAuthorities Resource Type
+        - Authorities Resource Type
       summary: Create a new resource
       description: Read only attributes included in the request body will be ignored.
       parameters:
@@ -2051,7 +2051,7 @@ paths:
   /OBAuthorities/.search:
     post:
       tags:
-        - OBAuthorities Resource Type
+        - Authorities Resource Type
       summary: Search for one or more resources using HTTP POST
       description: Useful for executing searches without passing parameters that may contain sensitive information on the URL.
       parameters:
@@ -2105,7 +2105,7 @@ paths:
   '/OBAuthorities/{id}':
     get:
       tags:
-        - OBAuthorities Resource Type
+        - Authorities Resource Type
       summary: Retrieve the resource
       parameters:
         - $ref: '#/parameters/id'
@@ -2127,7 +2127,7 @@ paths:
         url: 'https://tools.ietf.org/html/rfc7644#section-3.4.1'
     put:
       tags:
-        - OBAuthorities Resource Type
+        - Authorities Resource Type
       summary: Replace all attributes of the resource
       description: Read only attributes included in the request body will be ignored. Attributes omitted from the request body will be assumed to be not asserted by the client and will not be modified.
       parameters:
@@ -2158,7 +2158,7 @@ paths:
         url: 'https://tools.ietf.org/html/rfc7644#section-3.5.1'
     delete:
       tags:
-        - OBAuthorities Resource Type
+        - Authorities Resource Type
       summary: Delete the resource
       parameters:
         - $ref: '#/parameters/id'
@@ -2176,7 +2176,7 @@ paths:
         url: 'https://tools.ietf.org/html/rfc7644#section-3.6'
     patch:
       tags:
-        - OBAuthorities Resource Type
+        - Authorities Resource Type
       summary: Update one or more attributes of the resource
       parameters:
         - $ref: '#/parameters/id'
@@ -2247,7 +2247,7 @@ paths:
   '/OBAuthorities/{id}/consentHistory':
     get:
       tags:
-        - OAuth2 Consent
+        - OAuth 2.0 Consent
       summary: Search the user's history of consent events for OAuth2 clients
       parameters:
         - $ref: '#/parameters/id'
@@ -2268,7 +2268,7 @@ paths:
                 type: array
                 description: A multi-valued list of complex objects containing the requested resources.
                 items:
-                  $ref: '#/definitions/OAuth2 Consent History'
+                  $ref: '#/definitions/OAuth 2.0 Consent History'
               itemsPerPage:
                 type: integer
                 format: int32
@@ -2300,7 +2300,7 @@ paths:
   '/OBAuthorities/{id}/consentHistory/{eventId}':
     get:
       tags:
-        - OAuth2 Consent
+        - OAuth 2.0 Consent
       summary: Retrieves a known historical consent event for an OAuth2 client
       parameters:
         - $ref: '#/parameters/id'
@@ -2315,7 +2315,7 @@ paths:
         '200':
           description: The consent history resource
           schema:
-            $ref: '#/definitions/OAuth2 Consent History'
+            $ref: '#/definitions/OAuth 2.0 Consent History'
         default:
           description: An error occurred while executing the operation
           schema:
@@ -2325,7 +2325,7 @@ paths:
   '/OBAuthorities/{id}/consents':
     get:
       tags:
-        - OAuth2 Consent
+        - OAuth 2.0 Consent
       summary: Search for consents granted to OAuth2 clients by the user
       parameters:
         - $ref: '#/parameters/id'
@@ -2346,7 +2346,7 @@ paths:
                 type: array
                 description: A multi-valued list of complex objects containing the requested resources.
                 items:
-                  $ref: '#/definitions/OAuth2 Consent'
+                  $ref: '#/definitions/OAuth 2.0 Consent'
               itemsPerPage:
                 type: integer
                 format: int32
@@ -2378,7 +2378,7 @@ paths:
   '/OBAuthorities/{id}/consents/{clientName}':
     get:
       tags:
-        - OAuth2 Consent
+        - OAuth 2.0 Consent
       summary: Retrieves the consents granted to OAuth2 client by the user
       parameters:
         - $ref: '#/parameters/id'
@@ -2393,7 +2393,7 @@ paths:
         '200':
           description: The consent resource
           schema:
-            $ref: '#/definitions/OAuth2 Consent'
+            $ref: '#/definitions/OAuth 2.0 Consent'
         default:
           description: An error occurred while executing the operation
           schema:
@@ -2402,7 +2402,7 @@ paths:
         - oauth2: []
     delete:
       tags:
-        - OAuth2 Consent
+        - OAuth 2.0 Consent
       summary: Revokes the consents granted to an OAuth2 client by the user
       parameters:
         - $ref: '#/parameters/id'
@@ -2929,7 +2929,7 @@ paths:
   /OBThirdPartyProviders:
     get:
       tags:
-        - OBThirdPartyProviders Resource Type
+        - Third Party Providers Resource Type
       summary: Search for one or more resources
       parameters:
         - $ref: '#/parameters/attributes'
@@ -2983,7 +2983,7 @@ paths:
         url: 'https://tools.ietf.org/html/rfc7644#section-3.4.2'
     post:
       tags:
-        - OBThirdPartyProviders Resource Type
+        - Third Party Providers Resource Type
       summary: Create a new resource
       description: Read only attributes included in the request body will be ignored.
       parameters:
@@ -3014,7 +3014,7 @@ paths:
   /OBThirdPartyProviders/.search:
     post:
       tags:
-        - OBThirdPartyProviders Resource Type
+        - Third Party Providers Resource Type
       summary: Search for one or more resources using HTTP POST
       description: Useful for executing searches without passing parameters that may contain sensitive information on the URL.
       parameters:
@@ -3068,7 +3068,7 @@ paths:
   '/OBThirdPartyProviders/{id}':
     get:
       tags:
-        - OBThirdPartyProviders Resource Type
+        - Third Party Providers Resource Type
       summary: Retrieve the resource
       parameters:
         - $ref: '#/parameters/id'
@@ -3090,7 +3090,7 @@ paths:
         url: 'https://tools.ietf.org/html/rfc7644#section-3.4.1'
     put:
       tags:
-        - OBThirdPartyProviders Resource Type
+        - Third Party Providers Resource Type
       summary: Replace all attributes of the resource
       description: Read only attributes included in the request body will be ignored. Attributes omitted from the request body will be assumed to be not asserted by the client and will not be modified.
       parameters:
@@ -3121,7 +3121,7 @@ paths:
         url: 'https://tools.ietf.org/html/rfc7644#section-3.5.1'
     delete:
       tags:
-        - OBThirdPartyProviders Resource Type
+        - Third Party Providers Resource Type
       summary: Delete the resource
       parameters:
         - $ref: '#/parameters/id'
@@ -3139,7 +3139,7 @@ paths:
         url: 'https://tools.ietf.org/html/rfc7644#section-3.6'
     patch:
       tags:
-        - OBThirdPartyProviders Resource Type
+        - Third Party Providers Resource Type
       summary: Update one or more attributes of the resource
       parameters:
         - $ref: '#/parameters/id'
@@ -3210,7 +3210,7 @@ paths:
   '/OBThirdPartyProviders/{id}/consentHistory':
     get:
       tags:
-        - OAuth2 Consent
+        - OAuth 2.0 Consent
       summary: Search the user's history of consent events for OAuth2 clients
       parameters:
         - $ref: '#/parameters/id'
@@ -3231,7 +3231,7 @@ paths:
                 type: array
                 description: A multi-valued list of complex objects containing the requested resources.
                 items:
-                  $ref: '#/definitions/OAuth2 Consent History'
+                  $ref: '#/definitions/OAuth 2.0 Consent History'
               itemsPerPage:
                 type: integer
                 format: int32
@@ -3263,7 +3263,7 @@ paths:
   '/OBThirdPartyProviders/{id}/consentHistory/{eventId}':
     get:
       tags:
-        - OAuth2 Consent
+        - OAuth 2.0 Consent
       summary: Retrieves a known historical consent event for an OAuth2 client
       parameters:
         - $ref: '#/parameters/id'
@@ -3278,7 +3278,7 @@ paths:
         '200':
           description: The consent history resource
           schema:
-            $ref: '#/definitions/OAuth2 Consent History'
+            $ref: '#/definitions/OAuth 2.0 Consent History'
         default:
           description: An error occurred while executing the operation
           schema:
@@ -3288,7 +3288,7 @@ paths:
   '/OBThirdPartyProviders/{id}/consents':
     get:
       tags:
-        - OAuth2 Consent
+        - OAuth 2.0 Consent
       summary: Search for consents granted to OAuth2 clients by the user
       parameters:
         - $ref: '#/parameters/id'
@@ -3309,7 +3309,7 @@ paths:
                 type: array
                 description: A multi-valued list of complex objects containing the requested resources.
                 items:
-                  $ref: '#/definitions/OAuth2 Consent'
+                  $ref: '#/definitions/OAuth 2.0 Consent'
               itemsPerPage:
                 type: integer
                 format: int32
@@ -3341,7 +3341,7 @@ paths:
   '/OBThirdPartyProviders/{id}/consents/{clientName}':
     get:
       tags:
-        - OAuth2 Consent
+        - OAuth 2.0 Consent
       summary: Retrieves the consents granted to OAuth2 client by the user
       parameters:
         - $ref: '#/parameters/id'
@@ -3356,7 +3356,7 @@ paths:
         '200':
           description: The consent resource
           schema:
-            $ref: '#/definitions/OAuth2 Consent'
+            $ref: '#/definitions/OAuth 2.0 Consent'
         default:
           description: An error occurred while executing the operation
           schema:
@@ -3365,7 +3365,7 @@ paths:
         - oauth2: []
     delete:
       tags:
-        - OAuth2 Consent
+        - OAuth 2.0 Consent
       summary: Revokes the consents granted to an OAuth2 client by the user
       parameters:
         - $ref: '#/parameters/id'
@@ -4135,7 +4135,7 @@ definitions:
         type: string
         description: The human-readable message that provides specific details about this account usability issue.
     description: Account usability issue
-  OAuth2 Consent History:
+  OAuth 2.0 Consent History:
     required:
       - schemas
     properties:
@@ -4223,7 +4223,7 @@ definitions:
         description: The refresh token issued by the provider that may be used to retrieve a new access token.
         readOnly: true
     description: A link to an external identity provider
-  OAuth2 Consent:
+  OAuth 2.0 Consent:
     required:
       - schemas
     properties:
