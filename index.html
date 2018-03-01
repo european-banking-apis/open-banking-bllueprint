@@ -208,6 +208,28 @@ layout: page
   <p>This is just an OpenAPI definition, published using Swagger UI--it is not a functional API or mock yet.</p>
 </section>
 
+<!-- Banner -->
+<section id="banner">
+	<div class="content">
+		<header>
+      <a name="Open Banking - Directory APIs"></a>
+			<h2 id="auth-header">Directory APIs</h2>
+		</header>
+    <img src="http://open.banking.blueprint.apievangelist.com/images/public-data.png" alt="" width="25%" align="right" />
+		<p>The Open Banking Directory is the key Architectural Component that enables Payment Service Providers to enrol with Open Banking and initiate interactions through APIs with ASPSPs. At it's core the directory is an identity and access management service providing identity information supporting natural persons, organisations and software identity classes.</p>
+	</div>
+</section>
+
+<section>
+	<header>
+		<a name="Open Banking - Directory"></a>
+		<h2>Open Banking Directory</h2>
+	</header>
+  <p>A set of System for Cross-domain Identity Management (SCIM) APIs for engaging with the directory.</p>
+  <div id="open-banking-scim"></div>
+  <p>This is just an OpenAPI definition, published using Swagger UI--it is not a functional API or mock yet.</p>
+</section>
+
 <script>
 window.onload = function() {
 
@@ -330,6 +352,22 @@ window.onload = function() {
     layout: "StandaloneLayout"
   })
   window.ui = open_banking_credit_card;
+
+  // HSDS Utility
+  const open_banking_scim = SwaggerUIBundle({
+    url: "https://raw.githubusercontent.com/{{ site.github_org}}/{{ site.github_repo}}/master/_data/api-commons/system-for-cross-domain-Identity-management.yaml",
+    dom_id: '#open-banking-scim',
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ],
+    plugins: [
+      SwaggerUIBundle.plugins.DownloadUrl
+    ],
+    layout: "StandaloneLayout"
+  })
+  window.ui = open_banking_scim;
+
 }
 </script>
 
