@@ -3,13 +3,11 @@
     <h2>API Evangelist Partners</h2>
   </header>
   <div class="mini-posts">
-    {% assign partners = site.data.partners.index | sort: 'view_sort' %}
-    {% for partner in partners %}
-      {% if partner.type == 'Sponsor' %}
-        <article>
-          <a href="{{ partner.url }}" class="image"><img src="{{ partner.image }}" alt="" width="50%" /></a>
-        </article>
-      {% endif %}
-    {% endfor %}
+    <article style="display: inline;">
+      <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+    </article>
+    <article style="display: inline;">
+      <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+    </article>
   </div>
 </section>
